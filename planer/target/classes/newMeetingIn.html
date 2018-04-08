@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Planer V2</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link type="text/css" href="default.css" rel="stylesheet">
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <nav>
+            <ul class="nav nav-pills pull-left">
+                <li role="presentation" class="active"><a href="javascript:history.back()">Back</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Main site</a></li>
+            </ul>
+        </nav>
+        <h1 class="text-muted">
+            <center>Planer V2</center>
+        </h1>
+    </div>
+    <div class="jumbotron">
+        <form action="/newMeetingOut" method="post" class="form-signin">
+            <div align="left">Title</div>
+            <input type="text" name="title" placeholder="" required autofocus class="form-control">
+            </br>
+            <div align="left">Meeting date</div>
+            <input type="date" name="meetingDate" placeholder="Meeting date" class="form-control" required>
+            </br>
+            <div align="left">Start time</div>
+            <input type="time" name="startTime" placeholder="Start time" class="form-control" required>
+            </br>
+            <div align="left">End time</div>
+            <input type="time" name="endTime" placeholder="End time" class="form-control" required>
+            </br>
+            <div align="left">Description</div>
+            <textarea rows="8" cols="39" name="description">Enter the meeting description...</textarea>
+            </br>
+            <div align="left">Room number</div>
+            <select name="idRoom">
+                <#list rooms as room>
+                    <option value="${room.getId()}">${room.getId()+1} (number of seats: ${room.getNumberOfSeats()})</option>
+                </#list>
+            </select>
+            <h2><button id="btnUpdate" type="submit" class="btn btn-lg btn-primary btn-block">Confirm</button></h2>
+        </form>
+    </div>
+</div>
+</body>
+</html>

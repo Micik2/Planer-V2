@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Planer V2</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link type="text/css" href="default.css" rel="stylesheet">
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <nav>
+            <ul class="nav nav-pills pull-left">
+                <li role="presentation" class="active"><a href="javascript:history.back()">Back</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Main site</a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="text-muted">
+            <center>Planer V2</center>
+        </h1>
+    </div>
+    <div class="jumbotron">
+            <#list meetings as meeting>
+                    <h2>${meeting.getMeetingDate()}</h2>
+                    <ul class="form-signin">
+                        <li class="nostyle">
+                            <form action="/meeting" method="post">
+                                <input name="btn" type="hidden" value="${meeting.getId()}">
+                                <input name="btnMeeting" type="submit" value="${meeting.getTitle()}" class="btn btn-lg btn-primary btn-block"/>
+                            </form>
+                            From ${meeting.getsTime()} - to ${meeting.geteTime()}
+                        </li>
+                        <hr>
+                    </ul>
+            </#list>
+    </div>
+</div>
+</body>
+</html>

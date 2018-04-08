@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Planer V2</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link type="text/css" href="default.css" rel="stylesheet">
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="text-muted">Planer V2</h1>
+    </div>
+    <div class="jumbotron">
+        <form action="/meetings" method="get">
+            <input name="btnMeetings" type="submit" value="View all meetings" class="btn btn-lg btn-success"/>
+        </form>
+        </br>
+        <form action="/newMeetingIn" method="get">
+            <input name="btnMeeting" type="submit" value="Create new meeting" class="btn btn-lg btn-success"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
